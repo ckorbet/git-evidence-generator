@@ -1,0 +1,160 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --sidebar-bg: #f4f4f6;
+  --border: #ddd;
+  --accent: #2563eb;
+}
+
+html[data-theme='dark'] {
+  --bg: #1e1e1e;
+  --fg: #f0f0f0;
+  --sidebar-bg: #141414;
+  --border: #333;
+  --accent: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--fg);
+}
+
+.nav-item.active {
+  background: var(--accent);
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.profile-selector select,
+.profile-selector label {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+}
+
+.profiles-layout {
+  display: flex;
+  gap: 24px;
+}
+
+.profiles-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profiles-list li {
+  display: flex;
+  gap: 4px;
+}
+
+.profile-edit-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 560px;
+}
+
+.profile-edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+textarea,
+input {
+  font-family: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.error-message {
+  color: #cf222e;
+}
+
+.global-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #fff1f0;
+  color: #cf222e;
+  border-bottom: 1px solid #cf222e;
+}
+
+.global-error-banner button {
+  margin-left: auto;
+}
+
+.empty-state {
+  color: #888;
+  font-style: italic;
+}
+
+.date-range-inputs {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.progress-log,
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.file-missing {
+  color: #cf222e;
+  font-size: 12px;
+}
